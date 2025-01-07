@@ -31,7 +31,9 @@ function createParticle(x, y) {
 }
 
 // JavaScript for the Progress Bar
+// JavaScript for the Progress Bar
 window.onscroll = function() {
+    showProgressBar();
     updateProgressBar();
 };
 
@@ -45,6 +47,13 @@ function updateProgressBar() {
 
     // Set the height of the progress bar
     document.getElementById('progress-bar').style.height = scrollPercentage + '%';
+}
+
+function showProgressBar() {
+    const progressBar = document.getElementById('progress-bar');
+    if (!progressBar.classList.contains('visible')) {
+        progressBar.classList.add('visible');
+    }
 }
 
 // JavaScript for Scroll Navigation
