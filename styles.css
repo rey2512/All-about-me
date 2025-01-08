@@ -653,3 +653,23 @@ html {
     }
 }
 
+@media (max-width: 768px) {
+    .social-icons {
+        gap: 15px; /* Reduce gap further for smaller screens */
+    }
+
+    .icon {
+        font-size: 2rem; /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons {
+        flex-direction: row; /* Stack icons vertically on very small screens */
+        gap: 10px; /* Reduce gap for stacking */
+    }
+
+    .icon {
+        font-size: 1.8rem; /* Reduce font size for better fit */
+    }
+}
