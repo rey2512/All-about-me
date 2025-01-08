@@ -619,127 +619,37 @@ html {
 
 
 /* ------------------------------------- */
-@media (max-width: 1024px) {
-    #boxes-section {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .box {
-        width: 80%;
-    }
-
-    .projects {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-
 @media (max-width: 768px) {
-    .project {
-        width: 90%;
-    }
-
     .navigation {
         gap: 10px;
+        bottom: 15px;
+        left: auto;
+    }
+    .nav-item {
+        width: 40px;
+        height: 40px;
+    }
+    .nav-item img {
+        width: 20px;
+        height: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    .box {
-        width: 100%;
-    }
-
     .navigation {
         flex-direction: column;
+        gap: 10px;
+        padding: 10px;
         bottom: 10px;
+       
+    }
+    .nav-item {
+        width: 35px;
+        height: 35px;
+    }
+    .nav-item img {
+        width: 18px;
+        height: 18px;
     }
 }
 
-@media (max-width: 768px) {
-    .icon {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .icon {
-        font-size: 1.5rem;
-    }
-}
-@media (max-width: 768px) {
-    .about-me {
-        font-size: 1.5rem;
-        padding: 10px 0;
-    }
-    .about-me1, .about-me2, .about-me3, .about-me4 {
-        font-size: 1rem;
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .about-me {
-        font-size: 1.2rem;
-    }
-}
-@media (max-width: 768px) {
-    .collage-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .collage-container {
-        grid-template-columns: 1fr; /* Single column on small screens */
-    }
-    .collage-box {
-        height: auto; /* Adjust height naturally */
-        padding: 10px;
-    }
-    .collage-box img {
-        width: 100%;
-    }
-}
-@media (max-width: 768px) {
-    #boxes-section {
-        flex-direction: column; /* Stack boxes vertically on smaller screens */
-        align-items: center; 
-    }
-    .box {
-        width: 80%; /* Make the boxes smaller for narrower screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .box {
-        width: 90%; /* Even smaller for very small screens */
-    }
-}
-@media (max-width: 768px) {
-    .collage-item {
-        flex: 1 1 calc(50% - 20px); /* Adjust to two columns on tablets */
-        padding: 15px;
-    }
-
-    .collage-item .description {
-        font-size: 14px;
-        max-height: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    .collage-item {
-        flex: 1 1 100%; /* Stack items in one column on small devices */
-        padding: 10px;
-    }
-
-    .collage-item .description {
-        font-size: 13px;
-        max-height: 50px;
-    }
-}
