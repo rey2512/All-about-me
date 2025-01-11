@@ -677,3 +677,57 @@ html {
 
 
 
+@media (max-width: 1024px) {
+    #boxes-section {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .box {
+        width: 90%; /* Full-width on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container, #projects-section, .collage-container {
+        padding: 10px;
+    }
+    .project, .collage-box {
+        width: 100%; /* Adjust width for smaller screens */
+    }
+    .cube-container {
+        height: 50vh; /* Reduce height for smaller screens */
+    }
+    h1 {
+        font-size: 2rem; /* Adjust font size for better fit */
+        top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 100%; /* Full width for very small screens */
+        margin: 10px 0;
+    }
+    .about-me {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+    .navigation {
+        flex-direction: column;
+        padding: 5px;
+    }
+    .nav-item {
+        width: 30px;
+        height: 30px;
+    }
+    .project-title {
+        font-size: 1.2rem;
+    }
+    .social-icons {
+        flex-direction: row; /* Ensure horizontal alignment */
+    }
+    .icon {
+        font-size: 1.5rem; /* Smaller icons for small screens */
+    }
+}
