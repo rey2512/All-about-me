@@ -6,7 +6,11 @@ const numberOfParticles = 50;
 document.addEventListener('mousemove', (event) => {
     createParticle(event.pageX, event.pageY);
 });
-
+document.addEventListener('touchmove', (event) => {
+    // Get the touch coordinates (the first touch if multiple are detected)
+    const touch = event.touches[0];
+    createParticle(touch.pageX, touch.pageY);
+});
 function createParticle(x, y) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
