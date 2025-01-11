@@ -731,3 +731,8 @@ html {
         font-size: 1.5rem; /* Smaller icons for small screens */
     }
 }
+@media (max-width: 480px) {
+    .box, .project, .collage-box {
+        width: 100%; /* Adjust to fit smaller screens */
+    }
+}
