@@ -632,4 +632,169 @@ html {
 
 
 /* ------------------------------------- */
+@media (max-width: 768px) {
+    .card {
+      flex: 1 1 calc(50% - 16px); /* Two cards per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      flex: 1 1 100%; /* One card per row on small screens */
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+    nav a {
+      margin: 10px 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .about {
+      flex-direction: column;
+    }
+  
+    .projects, .experience {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .skill-item {
+      padding: 10px;
+    }
+  }
+  @media (max-width: 1024px) {
+    /* Adjust sections for tablets */
+    #boxes-section {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .box {
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust layout for mobile */
+    .navigation {
+        gap: 10px;
+        bottom: 15px;
+        left: auto;
+    }
+
+    .nav-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons {
+        gap: 15px; /* Reduce gap further for smaller screens */
+    }
+
+    .icon {
+        font-size: 2rem; /* Adjust font size for medium screens */
+    }
+
+    
+
+    .project {
+        width: 100%; /* Ensure project takes full width */
+    }
+
+    .box {
+        width: 100%; /* Full width for small screens */
+        margin: 10px 0;
+    }
+
+    .about-me {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .nav-item {
+        width: 50px;
+        height: 30px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .social-icons {
+        flex-direction: row; /* Ensure horizontal alignment */
+    }
+
+    .icon {
+        font-size: 1.5rem; /* Smaller icons for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust layout for very small screens */
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+        bottom: 10px;
+    }
+
+    .nav-item {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-item img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .box {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .about-me {
+        font-size: 1.3rem;
+        padding: 10px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem; /* Smaller description for small screens */
+    }
+
+    .social-icons {
+        flex-direction: row; /* Ensure icons are stacked horizontally */
+        gap: 10px; /* Reduce gap for stacking */
+    }
+
+    .icon {
+        font-size: 1.5rem; /* Smaller icons for small screens */
+    }
+}
 
