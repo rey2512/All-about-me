@@ -799,4 +799,16 @@ html {
 }
 
 
-@media (min-width: 600px) { .collage-container { flex-direction: row; flex-wrap: wrap; justify-content: space-between; } .collage-box { width: 48%; } }
+@media (max-width: 1200px) { 
+    .collage-container { 
+        grid-template-columns: repeat(2, 1fr);
+         width: 90%; } 
+         
+    .collage-box-wide { grid-column: span 2; } }
+    
+@media (max-width: 768px) { 
+    
+    .collage-container { grid-template-columns: 1fr;
+         width: 100%; }
+    
+    .collage-box-wide { grid-column: span 1; } }
