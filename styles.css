@@ -688,3 +688,50 @@ html {
         margin: 10px 0;
     }
 }
+
+@media (max-width: 768px) {
+    /* Adjust layout for mobile */
+    .navigation {
+        gap: 10px;
+        bottom: 15px;
+        left: auto;
+    }
+
+    .nav-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons {
+        gap: 15px; /* Reduce gap further for smaller screens */
+    }
+
+    .icon {
+        font-size: 2rem; /* Adjust font size for medium screens */
+    }
+
+}
+@media (max-width: 480px) {
+    /* Adjust layout for very small screens */
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+        bottom: 10px;
+    }
+
+    .nav-item {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-item img {
+        width: 18px;
+        height: 18px;
+    }
+}
