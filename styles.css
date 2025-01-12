@@ -1,3 +1,10 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     font-family: Roboto , sans-serif;
@@ -466,7 +473,7 @@ html {
     border: 2px solid #252525;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space between image and description */
+    justify-content: flex-start; /* Distribute space between image and description */
     align-items: center;
     text-align: center;
     height: 300px; /* Increased height for better image fitting and description space */
@@ -481,7 +488,7 @@ html {
 }
 
 .collage-box img {
-    width: 90%; /* Make sure the image fits well inside the box */
+    width: 100%; /* Make sure the image fits well inside the box */
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -619,125 +626,47 @@ html {
 
 
 /* ------------------------------------- */
-@media (max-width: 768px) {
-    .navigation {
-        gap: 10px;
-        bottom: 15px;
-        left: auto;
-    }
-    .nav-item {
-        width: 40px;
-        height: 40px;
-    }
-    .nav-item img {
-        width: 20px;
-        height: 20px;
-    }
-}
 
-@media (max-width: 480px) {
-    .navigation {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-        bottom: 10px;
-       
-    }
-    .nav-item {
-        width: 35px;
-        height: 35px;
-    }
-    .nav-item img {
-        width: 18px;
-        height: 18px;
-    }
-}
 
 @media (max-width: 768px) {
-    .social-icons {
-        gap: 15px; /* Reduce gap further for smaller screens */
+    .card {
+      flex: 1 1 calc(50% - 16px); /* Two cards per row on medium screens */
     }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      flex: 1 1 100%; /* One card per row on small screens */
+    }
+  }
+  
 
-    .icon {
-        font-size: 2rem; /* Adjust font size for medium screens */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
     }
-}
+    nav a {
+      margin: 10px 0;
+    }
+  }
 
-@media (max-width: 480px) {
-    .social-icons {
-        flex-direction: row; /* Stack icons vertically on very small screens */
-        gap: 10px; /* Reduce gap for stacking */
-    }
-
-    .icon {
-        font-size: 1.8rem; /* Reduce font size for better fit */
-    }
-}
-
-
-
-
-@media (max-width: 1024px) {
-    #boxes-section {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-    .box {
-        width: 100%; /* Full-width on smaller screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .container, #projects-section, .collage-container {
-        padding: 10px;
-    }
-    .project, .collage-box {
-        width: 100%; /* Adjust width for smaller screens */
-    }
-    .cube-container {
-        height: 50vh; /* Reduce height for smaller screens */
-    }
-    h1 {
-        font-size: 2rem; /* Adjust font size for better fit */
-        top: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .box {
-        width: 100%; /* Full width for very small screens */
-        margin: 10px 0;
-    }
-    .about-me {
-        font-size: 1.5rem;
-        padding: 10px;
-    }
-    .navigation {
-        flex-direction: column;
-        padding: 5px;
-    }
-    .nav-item {
-        width: 50px;
-        height: 30px;
+  @media (max-width: 1024px) {
+    .about {
+      flex-direction: column;
     }
   
-    .project-title {
-        font-size: 1.2rem;
+    .projects, .experience {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    .social-icons {
-        flex-direction: row; /* Ensure horizontal alignment */
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
     }
-    .icon {
-        font-size: 1.5rem; /* Smaller icons for small screens */
+  
+    .skill-item {
+      padding: 10px;
     }
-}
-@media (max-width: 768px) {
-    .collage-container {
-        grid-template-columns: 1fr; /* Stack collage boxes vertically */
-    }
-
-    .project {
-        width: 100%; /* Ensure project takes full width */
-    }
-}
+  }
+  
