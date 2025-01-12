@@ -494,7 +494,7 @@ html {
 }
 
 .collage-box img {
-    width: 100%; /* Make sure the image fits well inside the box */
+    width: 80%; /* Make sure the image fits well inside the box */
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -813,7 +813,7 @@ html {
          
     .collage-box-wide { grid-column: span 2;
      }
-     .collage-box img { width: 100%; height: auto; }
+     .collage-box img { width: 50%; height: 100px; }
  }
     
 @media (max-width: 768px) { 
