@@ -715,7 +715,45 @@ html {
         font-size: 2rem; /* Adjust font size for medium screens */
     }
 
+    
+
+    .project {
+        width: 100%; /* Ensure project takes full width */
+    }
+
+    .box {
+        width: 100%; /* Full width for small screens */
+        margin: 10px 0;
+    }
+
+    .about-me {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .nav-item {
+        width: 50px;
+        height: 30px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .social-icons {
+        flex-direction: row; /* Ensure horizontal alignment */
+    }
+
+    .icon {
+        font-size: 1.5rem; /* Smaller icons for small screens */
+    }
 }
+
 @media (max-width: 480px) {
     /* Adjust layout for very small screens */
     .navigation {
@@ -733,5 +771,31 @@ html {
     .nav-item img {
         width: 18px;
         height: 18px;
+    }
+
+    .box {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .about-me {
+        font-size: 1.3rem;
+        padding: 10px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem; /* Smaller description for small screens */
+    }
+
+    .social-icons {
+        flex-direction: row; /* Ensure icons are stacked horizontally */
+        gap: 10px; /* Reduce gap for stacking */
+    }
+
+    .icon {
+        font-size: 1.5rem; /* Smaller icons for small screens */
     }
 }
