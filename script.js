@@ -33,6 +33,7 @@ function createParticle(x, y) {
         particle.remove();
     }, 1500); // Particle will disappear after 1.5s
 }
+function toggleMenu() { var menu = document.getElementById('navMenu'); if (menu.style.display === 'block') { menu.style.display = 'none'; } else { menu.style.display = 'block'; } }
 
 // JavaScript for the Progress Bar
 // JavaScript for the Progress Bar

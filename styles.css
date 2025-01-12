@@ -246,7 +246,7 @@ span {
 }
 
 .navigation:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     background: rgba(30, 30, 30, 0.9);
 }
 
@@ -263,7 +263,7 @@ span {
 
 .nav-item:hover {
     background: #2c2c2c;
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 .nav-item img {
@@ -608,13 +608,18 @@ html {
 
 /* LinkedIn */
 .icon.linkedin:hover {
-    color: #0077b5;
+    color: #2b55ff;
     text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.941);
 }
 
 /* Twitter */
 .icon.twitter:hover {
-    color: #050708;
+    color: #00eaff;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+}
+/* ---mail---- */
+.icon.mail:hover{
+    color: #ff7a8e;
     text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
 }
 
@@ -821,3 +826,4 @@ html {
     .collage-box img { width: 70%; height: auto; }
     
  }
+ 
