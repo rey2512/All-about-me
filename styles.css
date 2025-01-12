@@ -4,7 +4,7 @@ html, body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    /* overflow-x: hidden; */
+    
 }
 *,
 *::before,
@@ -798,3 +798,5 @@ html {
     }
 }
 
+
+@media (min-width: 600px) { .collage-container { flex-direction: row; flex-wrap: wrap; justify-content: space-between; } .collage-box { width: 48%; } }
