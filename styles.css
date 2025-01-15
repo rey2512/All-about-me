@@ -839,6 +839,7 @@ html {
         font-size: 2em; /* Adjust font size for smaller screens */
         line-height: 1.5;
         margin-top: 75px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         
     }
 }
