@@ -283,7 +283,7 @@ html {
     left: 0;
     width: 5px;
     height: 0; /* Start with zero height */
-    background: linear-gradient(to bottom, rgb(255, 234, 0), rgb(130, 255, 114));
+    background: linear-gradient(to bottom, rgb(255, 234, 0), rgb(10, 77, 2));
     z-index: 1000;
     transition: height 0.2s ease;
     display: none; /* Hide initially */
@@ -566,7 +566,6 @@ html {
 .connect-section h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    font-family: 'Lora', serif;
     color: #ffd700;
 }
 
