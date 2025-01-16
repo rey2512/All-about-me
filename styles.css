@@ -107,7 +107,7 @@ span {
     transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
     box-sizing: border-box;
     opacity: 0.9;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
     font-size: 1.2rem;
@@ -896,7 +896,7 @@ html {
     position: relative;
     display: inline-block;
     font-weight: bold;
-    background: linear-gradient(90deg, #6efff8, #fff200, #ff3b3b, #6efff8);
+    background: linear-gradient(90deg, #6efff8, #756bff, #ff3b3b, #e90eb6);
     background-size: 300%;
     -webkit-background-clip: text;
     color: transparent;
