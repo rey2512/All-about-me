@@ -347,7 +347,7 @@ html {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #070c0f, #203a43, #2c5364);
+    background: #000; /* Dark background for better contrast */
     overflow: hidden;
 }
 
@@ -356,14 +356,14 @@ html {
     height: 200px;
     position: relative;
     transform-style: preserve-3d;
-    animation: rotate 10s infinite linear;
+    animation: rotate 15s infinite linear;
 }
 
 .face {
     position: absolute;
     width: 200px;
     height: 200px;
-    background: rgba(5, 5, 5, 0.2);
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent to let the stars shine through */
     border: 2px solid #ebfcfc;
     display: flex;
     justify-content: center;
@@ -371,6 +371,8 @@ html {
     font-size: 1.2rem;
     color: rgb(254, 254, 254);
     text-shadow: 0 0 5px #0c0f0f;
+    overflow: hidden; /* Prevent stars from going out of the face */
+    animation: moveStars 20s infinite linear;
 }
 
 .face.front  { transform: translateZ(100px); }
@@ -380,9 +382,36 @@ html {
 .face.top    { transform: rotateX(90deg) translateZ(100px); }
 .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
 
+/* Animation for rotating the cube */
 @keyframes rotate {
     0%   { transform: rotateX(0deg) rotateY(0deg); }
     100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Starry background effect on each face */
+@keyframes moveStars {
+    0% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    50% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+    100% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+/* Optional: Create random star effect using a pseudo-element */
+.face::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 10px 10px; /* Adjust the size of the stars */
+    animation: moveStars 5s infinite linear;
 }
 
 /* ------------------------ */
@@ -406,10 +435,10 @@ html {
 }
 
 .project {
-    width: 500px; /* Fixed width for consistent box size */
-    height: 300px; /* Allow height to adjust based on content */
+    width: 500px;
+    height: 300px;
     background-color: #000000;
-    border: 2px solid #fbf4f4;
+    border: 2px solid transparent; /* Transparent border for shiny effect */
     border-radius: 15px;
     color: white;
     display: flex;
@@ -418,13 +447,47 @@ html {
     align-items: center;
     text-align: center;
     padding: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    box-shadow: 0 4px 8px rgba(131, 131, 131, 0.879);
+    position: relative;
+    z-index: 1;
+}
+
+.project::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background: linear-gradient(45deg, #fffcfe, #2c2c3d, #7c9390, #8a7f58);
+    background-size: 200%;
+    border-radius: 15px;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .project:hover {
-    background-color: #333;
+    background-color: #1e1e1e;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project:hover::before {
+    opacity: 1; /* Show shiny border */
+    animation: shiny-border 3s linear infinite;
+}
+
+@keyframes shiny-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 
@@ -482,11 +545,13 @@ html {
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: bold;
-    transition: color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .project-links a:hover {
-    color: #ff00ff;
+    color: #9bffb0;
 }
 
 @media (max-width: 768px) {
@@ -517,50 +582,62 @@ html {
 .collage-box {
     background-color: #030101;
     border-radius: 20px;
-    color: white;
-    border: 2px solid #252525;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Distribute space between image and description */
     align-items: center;
     text-align: center;
     height: 300px; /* Increased height for better image fitting and description space */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     padding: 20px;
     overflow: hidden; /* To prevent any content overflow */
+    border: 1.5px solid #fff; /* Change the border to white on hover */
+ 
 }
 
 .collage-box:hover {
-    background-color: #333;
+    background-color: #2c2c2c;
+   
 }
 
 .collage-box img {
-    width: 80%; /* Make sure the image fits well inside the box */
-    height: auto;
+    width: 100%; /* Ensure the image fully fills the box */
+    height: 200px;
     border-radius: 10px;
     margin-bottom: 15px;
     object-fit: cover; /* Ensures the image fills the box without stretching */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .collage-box .description {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     flex-grow: 1; /* Allow description space to grow */
     display: flex;
     justify-content: center; /* Center align text */
     align-items: flex-start; /* Align text to the top */
+    opacity: 0; /* Initially hide description */
+    transition: opacity 0.3s ease;
+}
+
+.collage-box:hover .description {
+    opacity: 1; /* Fade in description on hover */
 }
 
 /* Styling for Row 2 and 3 */
 .collage-row-2, .collage-row-3 {
+    display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 20px; /* Adds space between boxes */
 }
 
 .collage-box-wide {
     grid-column: span 2;
-     /* Makes the box span across two columns */
+    /* Makes the box span across two columns */
 }
+
 
 
 
@@ -896,24 +973,26 @@ html {
     position: relative;
     display: inline-block;
     font-weight: bold;
-    background: linear-gradient(90deg, #6efff8, #756bff, #ff3b3b, #e90eb6);
-    background-size: 300%;
+    font-size: 2.5rem; /* Adjust size for better visibility */
+    background: linear-gradient(90deg, #6ce3ff, #ffffff, #ffcccc, #d1aaff);
+    background-size: 200%;
     -webkit-background-clip: text;
     color: transparent;
-    animation: shimmer-wave 2s ease-in-out infinite;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: shimmer-wave 3s ease-in-out infinite;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4), 0 0 16px rgba(255, 255, 255, 0.2);
 }
 
 .shimmer-text::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.2);
-    mix-blend-mode: overlay;
-    animation: shimmer-glow 1.5s linear infinite;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    mix-blend-mode: screen;
+    opacity: 0.6;
+    animation: shimmer-glow 2s ease-in-out infinite;
 }
 
 @keyframes shimmer-wave {
@@ -927,12 +1006,15 @@ html {
 
 @keyframes shimmer-glow {
     0% {
+        transform: scale(1);
         opacity: 0.5;
     }
     50% {
-        opacity: 0.8;
+        transform: scale(1.1);
+        opacity: 0.7;
     }
     100% {
+        transform: scale(1);
         opacity: 0.5;
     }
 }
