@@ -96,25 +96,4 @@ document.getElementById('home-nav').addEventListener('click', function() {
               block: 'start'
           });
       });
-      document.addEventListener("DOMContentLoaded", function() {
-        const particleContainer = document.querySelector(".particle-container");
-    
-        // Function to generate particles
-        function generateParticles(numParticles) {
-            for (let i = 0; i < numParticles; i++) {
-                const particle = document.createElement("div");
-                particle.classList.add("particle");
-    
-                // Set random positions for each particle
-                particle.style.left = `${Math.random() * 100}vw`;
-                particle.style.top = `${Math.random() * 100}vh`;
-    
-                // Add the particle to the container
-                particleContainer.appendChild(particle);
-            }
-        }
-    
-        // Generate 50 particles
-        generateParticles(50);
-    });
-    
+      

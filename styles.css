@@ -446,7 +446,7 @@ html {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    /* padding: 20px; */
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(131, 131, 131, 0.879);
