@@ -92,58 +92,72 @@ span {
     height: 70vh;
 }
 .box {
-    width: 20%;
-    height: auto;
-    border: 2px solid #ffffff;
-    background-color: #1c1c1c;
-    color: #fff;
-    margin: 10px;
+    width: 30%; /* Adjust width for a more balanced layout */
+    height: 380px;
+    border: 2px solid #e5e5e5; /* Softer border color for a cleaner look */
+    background-color: #1c1c1c; /* Dark theme for a professional touch */
+    color: #ffffff;
+    margin: 15px; /* Increased margin for better spacing */
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: background-color 0.3s ease;
+    transition: all 0.4s ease; /* Smoother transition for all changes */
     box-sizing: border-box;
-    opacity: 0.9;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 15px; /* Rounded corners for a modern feel */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* More prominent shadow for depth */
 }
 
 .box:hover {
-    background-color: #ddf5ff;
-    
+    background-color: #ffffff; /* Subtle light background on hover */
+    transform: translateY(-10px); /* Slight lift effect */
+    border: 2px solid #000000; /* Sharp contrast on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Stronger shadow for hover effect */
 }
 
 .content {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    padding: 30px 0;
+    line-height: 1.5;
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add smooth fade and move effect */
+    z-index: 2; /* Ensure it stays above hover-info */
 }
 
 .box:hover .content {
     opacity: 0;
+    transform: translateY(-10px); /* Slight upward animation */
 }
 
 .hover-info {
     font-size: 16px;
-    color: #000000;
+    color: #333333; /* Darker text for hover info */
     opacity: 0;
     position: absolute;
-    top: 20px;
-    left: 10px;
-    right: 10px;
-    bottom: 20px;
-    padding: 10px;
-    transition: opacity 0.3s ease;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px; /* Matches box radius */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Inner shadow for hover box */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Smoother hover effect */
+    z-index: 1; /* Position behind the content */
 }
 
 .box:hover .hover-info {
     opacity: 1;
+    transform: translateY(0); /* Ensure it comes into view */
 }
+
 
 .plus-sign {
     position: absolute;
@@ -504,7 +518,7 @@ html {
     background-color: #030101;
     border-radius: 20px;
     color: white;
-    border: 2px solid #252525;
+    border: 2px solid #cdcdcd;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Distribute space between image and description */
@@ -518,7 +532,8 @@ html {
 }
 
 .collage-box:hover {
-    background-color: #333;
+    background-color: #1b1b1b;
+        
 }
 
 .collage-box img {
@@ -869,5 +884,56 @@ html {
         margin-top: 75px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         
+    }
+}
+
+.shimmer-text {
+    position: relative;
+    display: inline-block;
+   
+    background: linear-gradient(120deg, #6ce3ff, #ffffff, #ffcccc, #d1aaff, #6ce3ff);
+    background-size: 300%; /* Smoother gradient animation */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer-wave 4s linear infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+    white-space: nowrap; /* Prevents text wrapping for longer content */
+}
+
+.shimmer-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    mix-blend-mode: overlay;
+    opacity: 0.7;
+    animation: shimmer-glow 3s ease-in-out infinite;
+    pointer-events: none; /* Prevent interaction issues */
+    border-radius: 5px; /* Slightly soften the glow edges */
+}
+
+@keyframes shimmer-wave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shimmer-glow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
     }
 }
