@@ -1,0 +1,74 @@
+.cube-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000; 
+    overflow: hidden;
+}
+
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 15s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1); 
+    border: 2px solid #ebfcfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: rgb(254, 254, 254);
+    text-shadow: 0 0 5px #0c0f0f;
+    overflow: hidden; /* Prevent stars from going out of the face */
+    animation: moveStars 20s infinite linear;
+    z-index: 2; /* Ensures content is on top */
+}
+
+/* Starry background effect on each face */
+@keyframes moveStars {
+    0% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    50% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+    100% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+/* Optional: Create random star effect using a pseudo-element, placed before the content */
+.face::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 10px 10px; /* Adjust the size of the stars */
+    z-index: 1; /* Ensures stars are behind the content */
+    animation: moveStars 5s infinite linear;
+}
+
+.face.front  { transform: translateZ(100px); }
+.face.back   { transform: rotateY(180deg) translateZ(100px); }
+.face.left   { transform: rotateY(-90deg) translateZ(100px); }
+.face.right  { transform: rotateY(90deg) translateZ(100px); }
+.face.top    { transform: rotateX(90deg) translateZ(100px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Animation for rotating the cube */
+@keyframes rotate {
+    0%   { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
