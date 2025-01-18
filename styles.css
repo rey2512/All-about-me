@@ -613,7 +613,7 @@ html {
 }
 
 /* Social Icons Container */
-.social-icons {
+#social-icons {
     display: flex;
     justify-content: center;
     gap: 30px;

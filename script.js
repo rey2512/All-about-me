@@ -91,7 +91,7 @@ document.getElementById('home-nav').addEventListener('click', function() {
       });
       
       document.getElementById('connect-nav').addEventListener('click', function() {
-          document.getElementById('sky').scrollIntoView({
+          document.getElementById('social-icons').scrollIntoView({
               behavior: 'smooth',
               block: 'start'
           });
