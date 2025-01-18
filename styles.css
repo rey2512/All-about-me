@@ -373,19 +373,7 @@ html {
     text-shadow: 0 0 5px #0c0f0f;
     overflow: hidden; /* Prevent stars from going out of the face */
     animation: moveStars 20s infinite linear;
-}
-
-.face.front  { transform: translateZ(100px); }
-.face.back   { transform: rotateY(180deg) translateZ(100px); }
-.face.left   { transform: rotateY(-90deg) translateZ(100px); }
-.face.right  { transform: rotateY(90deg) translateZ(100px); }
-.face.top    { transform: rotateX(90deg) translateZ(100px); }
-.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-/* Animation for rotating the cube */
-@keyframes rotate {
-    0%   { transform: rotateX(0deg) rotateY(0deg); }
-    100% { transform: rotateX(360deg) rotateY(360deg); }
+    z-index: 2; /* Ensures content is on top */
 }
 
 /* Starry background effect on each face */
@@ -401,8 +389,8 @@ html {
     }
 }
 
-/* Optional: Create random star effect using a pseudo-element */
-.face::after {
+/* Optional: Create random star effect using a pseudo-element, placed before the content */
+.face::before {
     content: '';
     position: absolute;
     top: 0;
@@ -411,8 +399,23 @@ html {
     bottom: 0;
     background-image: radial-gradient(circle, white 1px, transparent 1px);
     background-size: 10px 10px; /* Adjust the size of the stars */
+    z-index: 1; /* Ensures stars are behind the content */
     animation: moveStars 5s infinite linear;
 }
+
+.face.front  { transform: translateZ(100px); }
+.face.back   { transform: rotateY(180deg) translateZ(100px); }
+.face.left   { transform: rotateY(-90deg) translateZ(100px); }
+.face.right  { transform: rotateY(90deg) translateZ(100px); }
+.face.top    { transform: rotateX(90deg) translateZ(100px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Animation for rotating the cube */
+@keyframes rotate {
+    0%   { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
 
 /* ------------------------ */
 
@@ -542,7 +545,6 @@ html {
     align-items: center;
     text-align: center;
     height: 300px; /* Increased height for better image fitting and description space */
-    transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     padding: 20px;
     overflow: hidden; /* To prevent any content overflow */
@@ -556,7 +558,7 @@ html {
 }
 
 .collage-box img {
-    width: 100%; /* Ensure the image fully fills the box */
+    width: 75%; /* Ensure the image fully fills the box */
     height: 200px;
     border-radius: 10px;
     margin-bottom: 15px;
