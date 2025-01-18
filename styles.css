@@ -554,17 +554,7 @@ html {
     color: #9bffb0;
 }
 
-@media (max-width: 768px) {
-    .project {
-        width: 45%; /* Adjust for smaller screens */
-    }
-}
 
-@media (max-width: 480px) {
-    .project {
-        width: 100%; /* Full width for very small screens */
-    }
-}
 
 html {
     scroll-behavior: smooth;
