@@ -435,10 +435,10 @@ html {
 }
 
 .project {
-    width: 500px;
-    height: 300px;
+    width: 500px; /* Fixed width for consistent box size */
+    height: 300px; /* Allow height to adjust based on content */
     background-color: #000000;
-    border: 2px solid transparent; /* Transparent border for shiny effect */
+    border: 2px solid #fbf4f4;
     border-radius: 15px;
     color: white;
     display: flex;
@@ -446,50 +446,15 @@ html {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    /* padding: 20px; */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    padding: 20px;
+    transition: background-color 0.3s ease;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(131, 131, 131, 0.879);
-    position: relative;
-    z-index: 1;
-}
-
-.project::before {
-    content: '';
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    background: linear-gradient(45deg, #fffcfe, #2c2c3d, #7c9390, #8a7f58);
-    background-size: 200%;
-    border-radius: 15px;
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
 }
 
 .project:hover {
-    background-color: #1e1e1e;
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #333;
 }
-
-.project:hover::before {
-    opacity: 1; /* Show shiny border */
-    animation: shiny-border 3s linear infinite;
-}
-
-@keyframes shiny-border {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
 
 .project-content {
     display: flex;
@@ -545,14 +510,13 @@ html {
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: color 0.3s, background-color 0.3s;
+    transition: color 0.3s;
 }
 
 .project-links a:hover {
     color: #9bffb0;
 }
+
 
 
 
