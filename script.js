@@ -91,9 +91,10 @@ document.getElementById('home-nav').addEventListener('click', function() {
       });
       
       document.getElementById('connect-nav').addEventListener('click', function() {
-          document.getElementById('social-icons').scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-          });
-      });
+        document.querySelector('.social-icons').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+    
       
