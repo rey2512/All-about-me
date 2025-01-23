@@ -97,4 +97,35 @@ document.getElementById('home-nav').addEventListener('click', function() {
         });
     });
     
-      
+    
+    const grid = document.getElementById('dot-grid');
+
+    // Create the dots
+    const columns = 30; // Number of dots horizontally
+    const rows = 50; // Number of dots vertically
+    for (let i = 0; i < columns * rows; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        grid.appendChild(dot);
+    }
+    
+    // Add hover effect with smooth transition
+    document.addEventListener('mousemove', (e) => {
+        const dots = document.querySelectorAll('.dot');
+        
+        dots.forEach((dot) => {
+            const dotRect = dot.getBoundingClientRect();
+            const dx = dotRect.x + dotRect.width / 2 - e.clientX;
+            const dy = dotRect.y + dotRect.height / 2 - e.clientY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+    
+            if (distance < 140) { // Glow effect threshold
+                dot.style.transform = 'scale(1.1)';
+                dot.style.backgroundColor = 'rgba(100, 100, 255, 0.5)'; // Bright glow
+            } else {
+                dot.style.transform = 'scale(1)';
+                dot.style.backgroundColor = 'rgba(84, 84, 107, 0.5)';
+            }
+        });
+    });
+    
