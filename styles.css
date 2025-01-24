@@ -940,7 +940,7 @@ html {
 }
 
 @media (max-width: 768px) {
-    #dot-grid {
+    #particles {
         width: 10%; /* Reduce the grid width to 80% of the screen */
     }
 }
