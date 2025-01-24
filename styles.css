@@ -938,3 +938,17 @@ html {
         opacity: 0.8;
     }
 }
+
+@media (max-width: 768px) {
+    #dot-grid {
+        width: auto; /* Reduce the grid width to 80% of the screen */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #dot-grid {
+        width: auto; /* Further reduce the grid width to 60% of the screen */
+        height: auto;
+    }
+}

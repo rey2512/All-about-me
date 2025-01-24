@@ -110,9 +110,14 @@ document.getElementById('home-nav').addEventListener('click', function() {
     }
     
     // Add hover effect with smooth transition
+    let lastMouseMove = 0; // For throttling
     document.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastMouseMove < 30) return; // Throttle to reduce load (30ms interval)
+        lastMouseMove = now;
+    
         const dots = document.querySelectorAll('.dot');
-        
+        const rect = grid.getBoudingClientRect();
         dots.forEach((dot) => {
             const dotRect = dot.getBoundingClientRect();
             const dx = dotRect.x + dotRect.width / 2 - e.clientX;
