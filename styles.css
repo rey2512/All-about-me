@@ -941,14 +941,12 @@ html {
 
 @media (max-width: 768px) {
     #dot-grid {
-        width: auto; /* Reduce the grid width to 80% of the screen */
-        height: auto;
+        width: 80%; /* Reduce the grid width to 80% of the screen */
     }
 }
 
 @media (max-width: 480px) {
     #dot-grid {
-        width: auto; /* Further reduce the grid width to 60% of the screen */
-        height: auto;
+        width: 60%; /* Further reduce the grid width to 60% of the screen */
     }
 }
