@@ -941,12 +941,12 @@ html {
 
 @media (max-width: 768px) {
     #dot-grid {
-        width: 80%; /* Reduce the grid width to 80% of the screen */
+        width: 30%; /* Reduce the grid width to 80% of the screen */
     }
 }
 
 @media (max-width: 480px) {
     #dot-grid {
-        width: 60%; /* Further reduce the grid width to 60% of the screen */
+        width: 30%; /* Further reduce the grid width to 60% of the screen */
     }
 }
