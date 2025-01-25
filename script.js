@@ -98,39 +98,79 @@ document.getElementById('home-nav').addEventListener('click', function() {
     });
     
     
-    const grid = document.getElementById('dot-grid');
+    const container = document.getElementById('particle-container');
+    const particleCount = 100; // Number of particles
 
-    // Create the dots
-    const columns = 30; // Number of dots horizontally
-    const rows = 50; // Number of dots vertically
-    for (let i = 0; i < columns * rows; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        grid.appendChild(dot);
+    // Create particles
+    const particles = [];
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        container.appendChild(particle);
+        particles.push(particle);
     }
-    
-    // Add hover effect with smooth transition
-    let lastMouseMove = 0; // For throttling
-    document.addEventListener('mousemove', (e) => {
+
+    let lastMoveTime = 0; // Throttle flag for mouse/touchmove
+
+    // Store positions of particles
+    const particlePositions = [];
+    function positionParticles() {
+        particles.forEach(particle => {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+            particlePositions.push({ x, y });
+        });
+    }
+
+    // General function for mousemove and touchmove
+    function handleMovement(e) {
         const now = Date.now();
-        if (now - lastMouseMove < 30) return; // Throttle to reduce load (30ms interval)
-        lastMouseMove = now;
-    
-        const dots = document.querySelectorAll('.dot');
-        const rect = grid.getBoudingClientRect();
-        dots.forEach((dot) => {
-            const dotRect = dot.getBoundingClientRect();
-            const dx = dotRect.x + dotRect.width / 2 - e.clientX;
-            const dy = dotRect.y + dotRect.height / 2 - e.clientY;
+        if (now - lastMoveTime < 30) return; // Throttle the movement event
+        lastMoveTime = now;
+
+        // Handle mousemove or touchmove
+        let mouseX, mouseY;
+
+        if (e.type === 'mousemove') {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        } else if (e.type === 'touchmove' && e.touches.length > 0) {
+            mouseX = e.touches[0].clientX;
+            mouseY = e.touches[0].clientY;
+        }
+
+        // Animate particles on mouse/touch movement
+        particles.forEach((particle, index) => {
+            const dx = particlePositions[index].x - mouseX;
+            const dy = particlePositions[index].y - mouseY;
             const distance = Math.sqrt(dx * dx + dy * dy);
-    
-            if (distance < 140) { // Glow effect threshold
-                dot.style.transform = 'scale(1.1)';
-                dot.style.backgroundColor = 'rgba(100, 100, 255, 0.5)'; // Bright glow
+
+            // If particle is near the mouse/touch, enlarge and change color
+            if (distance < 150) {
+                particle.style.transform = 'scale(1.1)';
+                particle.style.backgroundColor = 'rgba(247, 173, 13, 0.9)';
             } else {
-                dot.style.transform = 'scale(1)';
-                dot.style.backgroundColor = 'rgba(84, 84, 107, 0.5)';
+                particle.style.transform = 'scale(1)';
+                particle.style.backgroundColor = 'rgba(35, 35, 37, 0.7)';
             }
         });
-    });
+    }
+
+    // Listen for both mousemove and touchmove
+    document.addEventListener('mousemove', handleMovement);
+    document.addEventListener('touchmove', handleMovement);
+
+    // Initialize particles' positions
+    positionParticles();
     
+    // Re-position particles when the window is resized
+    window.addEventListener('resize', () => {
+        positionParticles();
+    });
+
+    // ------------------------------------
+
+
+
