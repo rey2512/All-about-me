@@ -91,7 +91,7 @@ document.getElementById('home-nav').addEventListener('click', function() {
       });
       
       document.getElementById('connect-nav').addEventListener('click', function() {
-        document.querySelector('.social-icons').scrollIntoView({
+        document.querySelector('.connect-section').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
@@ -172,5 +172,25 @@ document.getElementById('home-nav').addEventListener('click', function() {
 
     // ------------------------------------
 
+
+/* script.js */
+const upperRowWrapper = document.querySelector('.upper-wrapper');
+const lowerRowWrapper = document.querySelector('.lower-wrapper');
+
+upperRowWrapper.addEventListener('mouseover', () => {
+    document.querySelector('.upper-row').style.animationPlayState = 'paused';
+});
+
+upperRowWrapper.addEventListener('mouseout', () => {
+    document.querySelector('.upper-row').style.animationPlayState = 'running';
+});
+
+lowerRowWrapper.addEventListener('mouseover', () => {
+    document.querySelector('.lower-row').style.animationPlayState = 'paused';
+});
+
+lowerRowWrapper.addEventListener('mouseout', () => {
+    document.querySelector('.lower-row').style.animationPlayState = 'running';
+});
 
 

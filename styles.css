@@ -943,3 +943,133 @@ html {
 }
 
 /* ------------more changes--------------- */
+/* styles.css */
+
+
+.connect-section {
+    width: 100%;
+    padding: 60px 20px; /* Top and bottom padding for spacing, left and right for responsiveness */
+    margin: 0 auto; /* Center the section if needed */
+    box-sizing: border-box; /* Ensures padding doesn't overflow the width */
+    text-align: center; /* Center-align the text/content */
+    font-family: 'Lora', serif; /* Ensure a professional-looking font */
+}
+
+
+
+.row-wrapper {
+    overflow: hidden;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    width: 200%; /* Ensuring enough space for seamless animation */
+    animation-play-state: running;
+}
+
+.card {
+    width: 300px;
+    height: 150px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000031;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.upper-row {
+    animation: moveLeft 20s linear infinite;
+}
+
+.lower-row {
+    animation: moveRight 20s linear infinite;
+}
+
+@keyframes moveLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes moveRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+
+.footer {
+    background-color: #000;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer .thanks {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .connect-section .card {
+      flex: 0 1 calc(50% - 20px); /* Two cards per row */
+    }
+  }
+  
+  /* Small screens (e.g., mobile) */
+  @media (max-width: 480px) {
+    .connect-section .card {
+        flex: 0 1 calc(100% - 20px); /* Ensures one card per row with a 20px gap */
+        width: 100%; /* Full width of the container */
+    }
+
+    .connect-section {
+        padding: 10px; /* Add padding to the section */
+    }
+
+    .card {
+        font-size: 6px; /* Smaller font size for smaller screens */
+        padding: 15px; /* Adjust padding */
+        height: 150px; /* Ensure height is fixed */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Include padding and border in element's size */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .footer{
+        font-size: 4px;
+    }
+}
