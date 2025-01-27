@@ -800,10 +800,10 @@ html {
         flex-direction: column;
         gap: 10px;
         padding: 5px;
-        bottom: 2px;
+        bottom: 42px;
+       
      
-      background-color: tomato;
-        
+         
     }
 
     .nav-item {
