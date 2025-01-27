@@ -1059,6 +1059,7 @@ html {
 
     .connect-section {
         padding: 10px; /* Add padding to the section */
+        width: 300vh;
     }
 
     .card {
