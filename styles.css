@@ -1006,8 +1006,7 @@ html {
     }
 
     .card {
-        width: 100%; /* Make the cards take up full width of container */
-        max-width: 180px; /* Limit card width for small screens */
+        width: 30%; /* Make the cards take up full width of container */
         margin: 0 auto; /* Center the card */
     }
 }
