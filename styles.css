@@ -116,7 +116,7 @@ span {
 }
 
 .box:hover {
-    transform: translateY(-8px) scale(1.03);
+    transform: translateY(-4px) scale(1.01);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(108, 227, 255, 0.2);
     background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
 }
@@ -989,13 +989,36 @@ html {
 
 
 /* ------------------ */
-@media (max-width: 768px) {
+
+
+@media screen and (max-width: 768px) {
+    .connect-section {
+        padding: 40px 10px; /* Reduce padding for smaller screens */
+    }
     .row {
         gap: 10px; /* Reduced gap for smaller screens */
     }
 
+    /* Adjusting the width of the cards for smaller screens */
     .card {
-        width: 250px; /* Adjust card width for smaller screens */
+        width: 90%; /* Making cards smaller and more responsive */
+        margin: 0 10px;
+        padding: 10px;
+    }
+
+    /* Adjust card header text size */
+    .card-header .title {
+        font-size: 1rem;
+    }
+
+    .card-header .handle {
+        font-size: 0.8rem;
+    }
+
+    /* Adjusting row animation speed and movement for smaller screens */
+    .upper-row,
+    .lower-row {
+        animation-duration: 15s; /* Slower animation for smaller screens */
     }
 }
 /* Media Query for very small screens (mobile phones) */
