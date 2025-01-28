@@ -192,5 +192,3 @@ lowerRowWrapper.addEventListener('mouseover', () => {
 lowerRowWrapper.addEventListener('mouseout', () => {
     document.querySelector('.lower-row').style.animationPlayState = 'running';
 });
-
-

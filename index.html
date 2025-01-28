@@ -20,7 +20,8 @@
     <div id="progress-bar"></div>
 
     <!-- Particle Effect -->
-    <div id="particle-container"></div>
+    <div id="neuron-particles"></div>
+
 
 
 
@@ -101,10 +102,10 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/rey2512/DeepFakeLaunch" target="_blank">
-                                <img src="Octicons-mark-github.svg" alt="GitHub Icon"> GitHub
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNMjAuNTQzLDM0LjU2OWMtMC4wNTQtMC4wMDEsMC41OTIsMS4zNjYsMC42MSwxLjM2NiAgYzEuNDEsMi41MTYsNC4xMjgsNC4wOCw4LjcxMyw0LjUxNGMtMC42NTQsMC40ODgtMS40NCwxLjQxNC0xLjU0OSwyLjQ4NGMtMC44MjMsMC41MjMtMi40NzgsMC42OTYtMy43NjQsMC4yOTcgIGMtMS44MDMtMC41NTktMi40OTMtNC4wNjYtNS4xOTItMy41NjZjLTAuNTg0LDAuMTA3LTAuNDY4LDAuNDg2LDAuMDM3LDAuODA4YzAuODIzLDAuNTI0LDEuNTk3LDEuMTc5LDIuMTk0LDIuNTcyICBjMC40NTksMS4wNywxLjQyMywyLjk4MSw0LjQ3MywyLjk4MWMxLjIxLDAsMi4wNTgtMC4xNDMsMi4wNTgtMC4xNDNzMC4wMjMsMi43MzEsMC4wMjMsMy43OTNjMCwxLjIyNS0xLjY4MiwxLjU3LTEuNjgyLDIuMTU5ICBjMCwwLjIzMywwLjU1NywwLjI1NSwxLjAwNCwwLjI1NWMwLjg4NCwwLDIuNzIzLTAuNzI1LDIuNzIzLTEuOTk4YzAtMS4wMTEsMC4wMTctNC40MTEsMC4wMTctNS4wMDZjMC0xLjMsMC43MDktMS43MTIsMC43MDktMS43MTIgIHMwLjA4OCw2Ljk0LTAuMTY5LDcuODcyYy0wLjMwMiwxLjA5NC0wLjg0NywwLjkzOS0wLjg0NywxLjQyN2MwLDAuNzI2LDIuMjE0LDAuMTc5LDIuOTQ4LTEuNDE2YzAuNTY3LTEuMjM5LDAuMzE5LTguMDUsMC4zMTktOC4wNSAgbDAuNjA1LTAuMDEyYzAsMCwwLjAzNCwzLjExNywwLjAxMyw0LjU0MmMtMC4wMjEsMS40NzYtMC4xMjMsMy4zNDIsMC43NjksNC4yMjJjMC41ODYsMC41NzksMi40ODQsMS41OTQsMi40ODQsMC42NjYgIGMwLTAuNTM5LTEuMDQtMC45ODItMS4wNC0yLjQ0MXYtNi43MTVjMC44MzEsMCwwLjcwNiwyLjIwOCwwLjcwNiwyLjIwOGwwLjA2MSw0LjEwM2MwLDAtMC4xODQsMS40OTQsMS42NDUsMi4xMTkgIGMwLjY0NSwwLjIyMywyLjAyNSwwLjI4MiwyLjA5LTAuMDljMC4wNjUtMC4zNzMtMS42NjItMC45MjgtMS42NzgtMi4wODRjLTAuMDEtMC43MDcsMC4wMzItMS4xMTksMC4wMzItNC4xODcgIGMwLTMuMDY4LTAuNDE5LTQuMjAyLTEuODgtNS4xMDZjNC41MDgtMC40NTUsNy4yOTktMS41NTEsOC42NTgtNC40ODZjMC4xMDYsMC4wMDMsMC41NTUtMS4zNzEsMC40OTYtMS4zNzEgIGMwLjMwNS0xLjEwOCwwLjQ3LTIuNDE5LDAuNTAyLTMuOTcxYy0wLjAwOC00LjIxLTIuMDU4LTUuNjk5LTIuNDUxLTYuMzk4YzAuNTgtMy4xODctMC4wOTgtNC42MzctMC40MTItNS4xMzUgIGMtMS4xNjItMC40MDYtNC4wNDEsMS4wNDUtNS42MTUsMi4wNjZjLTIuNTY0LTAuNzM3LTcuOTg2LTAuNjY2LTEwLjAxOSwwLjE5Yy0zLjc1MS0yLjYzOS01LjczNi0yLjIzNS01LjczNi0yLjIzNSAgcy0xLjI4MywyLjI1OS0wLjMzOSw1LjU2NWMtMS4yMzQsMS41NDYtMi4xNTQsMi42NC0yLjE1NCw1LjUzOUMxOS45MDYsMzEuODMsMjAuMTAyLDMzLjI5MiwyMC41NDMsMzQuNTY5eiBNMzMsNjQgIEMxNi40MzIsNjQsMyw1MC41NjksMywzNFMxNi40MzIsNCwzMyw0czMwLDEzLjQzMSwzMCwzMFM0OS41NjgsNjQsMzMsNjR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRDhEOUQ4OyIvPjwvc3ZnPg==" alt="GitHub Icon"> GitHub
                             </a>
                             <a href="https://deepverify.vercel.app/" target="_blank">
-                                <img src="favicon.png" alt="Website Icon"> Website
+                                <img src="favicon.png" alt="Website Icon"> 🔗
                             </a>
                         </div>
                     </div>
@@ -122,10 +123,10 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/rey2512/Expenze" target="_blank">
-                                <img src="Octicons-mark-github.svg" alt="GitHub Icon"> GitHub
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNMjAuNTQzLDM0LjU2OWMtMC4wNTQtMC4wMDEsMC41OTIsMS4zNjYsMC42MSwxLjM2NiAgYzEuNDEsMi41MTYsNC4xMjgsNC4wOCw4LjcxMyw0LjUxNGMtMC42NTQsMC40ODgtMS40NCwxLjQxNC0xLjU0OSwyLjQ4NGMtMC44MjMsMC41MjMtMi40NzgsMC42OTYtMy43NjQsMC4yOTcgIGMtMS44MDMtMC41NTktMi40OTMtNC4wNjYtNS4xOTItMy41NjZjLTAuNTg0LDAuMTA3LTAuNDY4LDAuNDg2LDAuMDM3LDAuODA4YzAuODIzLDAuNTI0LDEuNTk3LDEuMTc5LDIuMTk0LDIuNTcyICBjMC40NTksMS4wNywxLjQyMywyLjk4MSw0LjQ3MywyLjk4MWMxLjIxLDAsMi4wNTgtMC4xNDMsMi4wNTgtMC4xNDNzMC4wMjMsMi43MzEsMC4wMjMsMy43OTNjMCwxLjIyNS0xLjY4MiwxLjU3LTEuNjgyLDIuMTU5ICBjMCwwLjIzMywwLjU1NywwLjI1NSwxLjAwNCwwLjI1NWMwLjg4NCwwLDIuNzIzLTAuNzI1LDIuNzIzLTEuOTk4YzAtMS4wMTEsMC4wMTctNC40MTEsMC4wMTctNS4wMDZjMC0xLjMsMC43MDktMS43MTIsMC43MDktMS43MTIgIHMwLjA4OCw2Ljk0LTAuMTY5LDcuODcyYy0wLjMwMiwxLjA5NC0wLjg0NywwLjkzOS0wLjg0NywxLjQyN2MwLDAuNzI2LDIuMjE0LDAuMTc5LDIuOTQ4LTEuNDE2YzAuNTY3LTEuMjM5LDAuMzE5LTguMDUsMC4zMTktOC4wNSAgbDAuNjA1LTAuMDEyYzAsMCwwLjAzNCwzLjExNywwLjAxMyw0LjU0MmMtMC4wMjEsMS40NzYtMC4xMjMsMy4zNDIsMC43NjksNC4yMjJjMC41ODYsMC41NzksMi40ODQsMS41OTQsMi40ODQsMC42NjYgIGMwLTAuNTM5LTEuMDQtMC45ODItMS4wNC0yLjQ0MXYtNi43MTVjMC44MzEsMCwwLjcwNiwyLjIwOCwwLjcwNiwyLjIwOGwwLjA2MSw0LjEwM2MwLDAtMC4xODQsMS40OTQsMS42NDUsMi4xMTkgIGMwLjY0NSwwLjIyMywyLjAyNSwwLjI4MiwyLjA5LTAuMDljMC4wNjUtMC4zNzMtMS42NjItMC45MjgtMS42NzgtMi4wODRjLTAuMDEtMC43MDcsMC4wMzItMS4xMTksMC4wMzItNC4xODcgIGMwLTMuMDY4LTAuNDE5LTQuMjAyLTEuODgtNS4xMDZjNC41MDgtMC40NTUsNy4yOTktMS41NTEsOC42NTgtNC40ODZjMC4xMDYsMC4wMDMsMC41NTUtMS4zNzEsMC40OTYtMS4zNzEgIGMwLjMwNS0xLjEwOCwwLjQ3LTIuNDE5LDAuNTAyLTMuOTcxYy0wLjAwOC00LjIxLTIuMDU4LTUuNjk5LTIuNDUxLTYuMzk4YzAuNTgtMy4xODctMC4wOTgtNC42MzctMC40MTItNS4xMzUgIGMtMS4xNjItMC40MDYtNC4wNDEsMS4wNDUtNS42MTUsMi4wNjZjLTIuNTY0LTAuNzM3LTcuOTg2LTAuNjY2LTEwLjAxOSwwLjE5Yy0zLjc1MS0yLjYzOS01LjczNi0yLjIzNS01LjczNi0yLjIzNSAgcy0xLjI4MywyLjI1OS0wLjMzOSw1LjU2NWMtMS4yMzQsMS41NDYtMi4xNTQsMi42NC0yLjE1NCw1LjUzOUMxOS45MDYsMzEuODMsMjAuMTAyLDMzLjI5MiwyMC41NDMsMzQuNTY5eiBNMzMsNjQgIEMxNi40MzIsNjQsMyw1MC41NjksMywzNFMxNi40MzIsNCwzMyw0czMwLDEzLjQzMSwzMCwzMFM0OS41NjgsNjQsMzMsNjR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRDhEOUQ4OyIvPjwvc3ZnPg==" alt="GitHub Icon"> GitHub
                             </a>
                             <a href="https://expenze.vercel.app/" target="_blank">
-                                <img src="EXPENZELOGO.png" alt="Website Icon"> Website
+                                <img src="EXPENZELOGO.png" alt="Website Icon"> 🔗
                             </a>
                         </div>
                     </div>
@@ -143,10 +144,10 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/rey2512/streamlee" target="_blank">
-                                <img src="Octicons-mark-github.svg" alt="GitHub Icon"> GitHub
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNMjAuNTQzLDM0LjU2OWMtMC4wNTQtMC4wMDEsMC41OTIsMS4zNjYsMC42MSwxLjM2NiAgYzEuNDEsMi41MTYsNC4xMjgsNC4wOCw4LjcxMyw0LjUxNGMtMC42NTQsMC40ODgtMS40NCwxLjQxNC0xLjU0OSwyLjQ4NGMtMC44MjMsMC41MjMtMi40NzgsMC42OTYtMy43NjQsMC4yOTcgIGMtMS44MDMtMC41NTktMi40OTMtNC4wNjYtNS4xOTItMy41NjZjLTAuNTg0LDAuMTA3LTAuNDY4LDAuNDg2LDAuMDM3LDAuODA4YzAuODIzLDAuNTI0LDEuNTk3LDEuMTc5LDIuMTk0LDIuNTcyICBjMC40NTksMS4wNywxLjQyMywyLjk4MSw0LjQ3MywyLjk4MWMxLjIxLDAsMi4wNTgtMC4xNDMsMi4wNTgtMC4xNDNzMC4wMjMsMi43MzEsMC4wMjMsMy43OTNjMCwxLjIyNS0xLjY4MiwxLjU3LTEuNjgyLDIuMTU5ICBjMCwwLjIzMywwLjU1NywwLjI1NSwxLjAwNCwwLjI1NWMwLjg4NCwwLDIuNzIzLTAuNzI1LDIuNzIzLTEuOTk4YzAtMS4wMTEsMC4wMTctNC40MTEsMC4wMTctNS4wMDZjMC0xLjMsMC43MDktMS43MTIsMC43MDktMS43MTIgIHMwLjA4OCw2Ljk0LTAuMTY5LDcuODcyYy0wLjMwMiwxLjA5NC0wLjg0NywwLjkzOS0wLjg0NywxLjQyN2MwLDAuNzI2LDIuMjE0LDAuMTc5LDIuOTQ4LTEuNDE2YzAuNTY3LTEuMjM5LDAuMzE5LTguMDUsMC4zMTktOC4wNSAgbDAuNjA1LTAuMDEyYzAsMCwwLjAzNCwzLjExNywwLjAxMyw0LjU0MmMtMC4wMjEsMS40NzYtMC4xMjMsMy4zNDIsMC43NjksNC4yMjJjMC41ODYsMC41NzksMi40ODQsMS41OTQsMi40ODQsMC42NjYgIGMwLTAuNTM5LTEuMDQtMC45ODItMS4wNC0yLjQ0MXYtNi43MTVjMC44MzEsMCwwLjcwNiwyLjIwOCwwLjcwNiwyLjIwOGwwLjA2MSw0LjEwM2MwLDAtMC4xODQsMS40OTQsMS42NDUsMi4xMTkgIGMwLjY0NSwwLjIyMywyLjAyNSwwLjI4MiwyLjA5LTAuMDljMC4wNjUtMC4zNzMtMS42NjItMC45MjgtMS42NzgtMi4wODRjLTAuMDEtMC43MDcsMC4wMzItMS4xMTksMC4wMzItNC4xODcgIGMwLTMuMDY4LTAuNDE5LTQuMjAyLTEuODgtNS4xMDZjNC41MDgtMC40NTUsNy4yOTktMS41NTEsOC42NTgtNC40ODZjMC4xMDYsMC4wMDMsMC41NTUtMS4zNzEsMC40OTYtMS4zNzEgIGMwLjMwNS0xLjEwOCwwLjQ3LTIuNDE5LDAuNTAyLTMuOTcxYy0wLjAwOC00LjIxLTIuMDU4LTUuNjk5LTIuNDUxLTYuMzk4YzAuNTgtMy4xODctMC4wOTgtNC42MzctMC40MTItNS4xMzUgIGMtMS4xNjItMC40MDYtNC4wNDEsMS4wNDUtNS42MTUsMi4wNjZjLTIuNTY0LTAuNzM3LTcuOTg2LTAuNjY2LTEwLjAxOSwwLjE5Yy0zLjc1MS0yLjYzOS01LjczNi0yLjIzNS01LjczNi0yLjIzNSAgcy0xLjI4MywyLjI1OS0wLjMzOSw1LjU2NWMtMS4yMzQsMS41NDYtMi4xNTQsMi42NC0yLjE1NCw1LjUzOUMxOS45MDYsMzEuODMsMjAuMTAyLDMzLjI5MiwyMC41NDMsMzQuNTY5eiBNMzMsNjQgIEMxNi40MzIsNjQsMyw1MC41NjksMywzNFMxNi40MzIsNCwzMyw0czMwLDEzLjQzMSwzMCwzMFM0OS41NjgsNjQsMzMsNjR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRDhEOUQ4OyIvPjwvc3ZnPg==" alt="GitHub Icon"> GitHub
                             </a>
                             <a href="https://streamlee.vercel.app/" target="_blank">
-                                <img src="logo.png" alt="Website Icon"> Website
+                                <img src="logo.png" alt="Website Icon"> 🔗
                             </a>
                         </div>
                     </div>
@@ -164,7 +165,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/currenltlyworkingonit" target="_blank">
-                                <img src="Octicons-mark-github.svg" alt="GitHub Icon"> GitHub
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNMjAuNTQzLDM0LjU2OWMtMC4wNTQtMC4wMDEsMC41OTIsMS4zNjYsMC42MSwxLjM2NiAgYzEuNDEsMi41MTYsNC4xMjgsNC4wOCw4LjcxMyw0LjUxNGMtMC42NTQsMC40ODgtMS40NCwxLjQxNC0xLjU0OSwyLjQ4NGMtMC44MjMsMC41MjMtMi40NzgsMC42OTYtMy43NjQsMC4yOTcgIGMtMS44MDMtMC41NTktMi40OTMtNC4wNjYtNS4xOTItMy41NjZjLTAuNTg0LDAuMTA3LTAuNDY4LDAuNDg2LDAuMDM3LDAuODA4YzAuODIzLDAuNTI0LDEuNTk3LDEuMTc5LDIuMTk0LDIuNTcyICBjMC40NTksMS4wNywxLjQyMywyLjk4MSw0LjQ3MywyLjk4MWMxLjIxLDAsMi4wNTgtMC4xNDMsMi4wNTgtMC4xNDNzMC4wMjMsMi43MzEsMC4wMjMsMy43OTNjMCwxLjIyNS0xLjY4MiwxLjU3LTEuNjgyLDIuMTU5ICBjMCwwLjIzMywwLjU1NywwLjI1NSwxLjAwNCwwLjI1NWMwLjg4NCwwLDIuNzIzLTAuNzI1LDIuNzIzLTEuOTk4YzAtMS4wMTEsMC4wMTctNC40MTEsMC4wMTctNS4wMDZjMC0xLjMsMC43MDktMS43MTIsMC43MDktMS43MTIgIHMwLjA4OCw2Ljk0LTAuMTY5LDcuODcyYy0wLjMwMiwxLjA5NC0wLjg0NywwLjkzOS0wLjg0NywxLjQyN2MwLDAuNzI2LDIuMjE0LDAuMTc5LDIuOTQ4LTEuNDE2YzAuNTY3LTEuMjM5LDAuMzE5LTguMDUsMC4zMTktOC4wNSAgbDAuNjA1LTAuMDEyYzAsMCwwLjAzNCwzLjExNywwLjAxMyw0LjU0MmMtMC4wMjEsMS40NzYtMC4xMjMsMy4zNDIsMC43NjksNC4yMjJjMC41ODYsMC41NzksMi40ODQsMS41OTQsMi40ODQsMC42NjYgIGMwLTAuNTM5LTEuMDQtMC45ODItMS4wNC0yLjQ0MXYtNi43MTVjMC44MzEsMCwwLjcwNiwyLjIwOCwwLjcwNiwyLjIwOGwwLjA2MSw0LjEwM2MwLDAtMC4xODQsMS40OTQsMS42NDUsMi4xMTkgIGMwLjY0NSwwLjIyMywyLjAyNSwwLjI4MiwyLjA5LTAuMDljMC4wNjUtMC4zNzMtMS42NjItMC45MjgtMS42NzgtMi4wODRjLTAuMDEtMC43MDcsMC4wMzItMS4xMTksMC4wMzItNC4xODcgIGMwLTMuMDY4LTAuNDE5LTQuMjAyLTEuODgtNS4xMDZjNC41MDgtMC40NTUsNy4yOTktMS41NTEsOC42NTgtNC40ODZjMC4xMDYsMC4wMDMsMC41NTUtMS4zNzEsMC40OTYtMS4zNzEgIGMwLjMwNS0xLjEwOCwwLjQ3LTIuNDE5LDAuNTAyLTMuOTcxYy0wLjAwOC00LjIxLTIuMDU4LTUuNjk5LTIuNDUxLTYuMzk4YzAuNTgtMy4xODctMC4wOTgtNC42MzctMC40MTItNS4xMzUgIGMtMS4xNjItMC40MDYtNC4wNDEsMS4wNDUtNS42MTUsMi4wNjZjLTIuNTY0LTAuNzM3LTcuOTg2LTAuNjY2LTEwLjAxOSwwLjE5Yy0zLjc1MS0yLjYzOS01LjczNi0yLjIzNS01LjczNi0yLjIzNSAgcy0xLjI4MywyLjI1OS0wLjMzOSw1LjU2NWMtMS4yMzQsMS41NDYtMi4xNTQsMi42NC0yLjE1NCw1LjUzOUMxOS45MDYsMzEuODMsMjAuMTAyLDMzLjI5MiwyMC41NDMsMzQuNTY5eiBNMzMsNjQgIEMxNi40MzIsNjQsMyw1MC41NjksMywzNFMxNi40MzIsNCwzMyw0czMwLDEzLjQzMSwzMCwzMFM0OS41NjgsNjQsMzMsNjR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRDhEOUQ4OyIvPjwvc3ZnPg==" alt="GitHub Icon"> GitHub
                             </a>
                             <!-- <a href="https://project4-website.com" target="_blank">
                                 <img src="Logo1.png" alt="Website Icon"> Website
@@ -263,6 +264,7 @@
                 <div class="row upper-row">
                     <a class="card" href="https://www.linkedin.com/in/rey12" target="_blank">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVR4nO2YO08CQRDH11jYGisTW7X1E1jZKcTSL2EQJHJbEAsJiZ2FhZ2FpbWFDY/IO0YN3GIEiQWFxhhBER8oMGZvFVC4wJ3mbi/ZfzIh7GyW+e3Mzh2LkJCQkBDfkrKLSCJhhEkVYQIGWRVhEkKSbP9b8FjeNDBoUDG//p03P3hgJtt0AChlw0HwBJBEgjoA5CeOMlDRDqC2mCcNyJUEtBJjn/S7ERCapRL8tC8FR5dlqNbqECmUYWojZQyEZvVaxJVUgu5UOF9mmbAEwEpM2flOPb3VWTlZAsBl9Qx42BmgEDQToXwJJi11BrDVu5AzAcgR7TY63s8vZQC5j9tznF8bsHZK+7xBAI4I9BId7+ef8CZhK1iE7HUVXt8b8PDyoZTi8n4ORtyJ/pk0E2DGn4LbSg3UdFKswLg3ybLEI0Dh7gX6KZQvwZArzifAoJrfyaiXkpkAjWZTqf+57TQs7WYhcFHqOW8vdcMOOm8A6wdXLDBa4540DK8m4PD8vmte7va53dF4AhjD8Z+t0pOG2a2zrnmPrx/qryVmATSbHf6WyTAqJVTmRvkCYP6o9rWwACAiA98SJYTFISaiCyHRRv/lH1mcPWh+Gx0fxK9lLfzXBxlPV4uS/KgdgN7Pmx04br07BfRkwM5PBjIL2gFYFvymB4+JT1/wLQjZptzPG3kmJPpbckD/zgsJCQkhg/QJ3PVUWJ5Zt98AAAAASUVORK5CYII=" alt="linkedin">
+                        <p>@rey12</p>
                         <p>Connect with me on LinkedIn for professional networking.</p>
                     </a>
                     <a class="card" href="https://github.com/rey2512" target="_blank">
@@ -291,6 +293,17 @@
                         <p>@harrypotter90</p>
                         <p>See my coding practice and challenges on LeetCode.</p>
                     </a>
+                    <a class="card" href="https://www.linkedin.com/in/rey12" target="_blank">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVR4nO2YO08CQRDH11jYGisTW7X1E1jZKcTSL2EQJHJbEAsJiZ2FhZ2FpbWFDY/IO0YN3GIEiQWFxhhBER8oMGZvFVC4wJ3mbi/ZfzIh7GyW+e3Mzh2LkJCQkBDfkrKLSCJhhEkVYQIGWRVhEkKSbP9b8FjeNDBoUDG//p03P3hgJtt0AChlw0HwBJBEgjoA5CeOMlDRDqC2mCcNyJUEtBJjn/S7ERCapRL8tC8FR5dlqNbqECmUYWojZQyEZvVaxJVUgu5UOF9mmbAEwEpM2flOPb3VWTlZAsBl9Qx42BmgEDQToXwJJi11BrDVu5AzAcgR7TY63s8vZQC5j9tznF8bsHZK+7xBAI4I9BId7+ef8CZhK1iE7HUVXt8b8PDyoZTi8n4ORtyJ/pk0E2DGn4LbSg3UdFKswLg3ybLEI0Dh7gX6KZQvwZArzifAoJrfyaiXkpkAjWZTqf+57TQs7WYhcFHqOW8vdcMOOm8A6wdXLDBa4540DK8m4PD8vmte7va53dF4AhjD8Z+t0pOG2a2zrnmPrx/qryVmATSbHf6WyTAqJVTmRvkCYP6o9rWwACAiA98SJYTFISaiCyHRRv/lH1mcPWh+Gx0fxK9lLfzXBxlPV4uS/KgdgN7Pmx04br07BfRkwM5PBjIL2gFYFvymB4+JT1/wLQjZptzPG3kmJPpbckD/zgsJCQkhg/QJ3PVUWJ5Zt98AAAAASUVORK5CYII=" alt="linkedin">
+                        <p>Connect with me on LinkedIn for professional networking.</p>
+                    </a>
+                    <a class="card" href="https://spotify.com/rey12" target="_blank">
+                        <img width="48" height="48" src="https://img.icons8.com/fluency/48/spotify.png" alt="spotify"/>
+                        <p>@rey12</p>
+                        <p>Listen to my favorite playlists on Spotify.</p>
+                    </a>
+                    <!-- End of duplicated content -->
+
                     
                 </div>
             </div>
