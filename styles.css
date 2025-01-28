@@ -949,31 +949,40 @@ html {
     animation: moveLowerRow 30s linear infinite;
 }
 
-/* Animation for upper row moving to the left */
+/* Animation for upper row moving to the left, then quickly reversing */
 @keyframes moveUpperRow {
     0% {
         transform: translateX(0);
     }
+   
     50% {
-        transform: translateX(-50%); /* Midway point, after half the width */
+        transform: translateX(-50%);
+    }
+    60% {
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(0);
     }
 }
 
-/* Animation for lower row moving to the right */
+/* Animation for lower row moving to the right, then quickly reversing */
 @keyframes moveLowerRow {
     0% {
         transform: translateX(0);
     }
+    
     50% {
-        transform: translateX(50%); /* Midway point, after half the width */
+        transform: translateX(50%);
+    }
+    60% {
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(100%);
+        transform: translateX(0);
     }
 }
+
 
 /* Optional: Pausing the animation when hovering over the row wrapper */
 .row-wrapper:hover .upper-row,
@@ -981,66 +990,48 @@ html {
     animation-play-state: paused;
 }
 
-/* Optional: Slow down the animation on hover for both rows */
-.upper-wrapper:hover .upper-row,
-.lower-wrapper:hover .lower-row {
-    animation-play-state: paused;
-}
+
 
 
 /* ------------------ */
 
 
 @media (max-width: 768px) {
+    /* Remove default margins and padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Ensure padding and border don't affect element dimensions */
+    }
+
+    body, html {
+        height: 100%; /* Ensure the body and html elements take up full height */
+        width: 100%; /* Ensure full width */
+    }
+
     .connect-section {
-        padding: 40px 10px; /* Reduced padding to fit the screen better */
+        padding: 0; /* Remove any padding */
+        margin: 0; /* Remove any margin */
     }
 
     .row-wrapper {
-        margin: 15px 0; /* Adjusted margin */
+        margin: 0; /* Remove any margin */
     }
 
     .row {
-        gap: 10px; /* Reduced gap for smaller screens */
-        width: 150%; /* Adjust the row width to avoid large space */
+      
+        gap: 10px; /* Remove any gap between items */
+        width: 100%; /* Full width */
+        margin: 0; /* Remove margin */
     }
 
     .card {
-        width: 30%; /* Make the cards take up full width of container */
-        margin: 0 auto; /* Center the card */
+        width: 100%; /* Make cards take up the full width */
+        margin: 0; /* Remove margin */
+        padding: 0; /* Remove padding */
     }
 }
 
-
-/* Media Query for very small screens (mobile phones) */
-@media screen and (max-width: 480px) {
-    .card {
-        width: 100%; /* Full width for mobile devices */
-        margin: 10px 0;
-    }
-
-    .connect-section {
-        padding: 20px 10px; /* Further reduce padding */
-    }
-
-    .card-header .title {
-        font-size: 0.9rem; /* Smaller title for small screens */
-    }
-
-    .card-header .handle {
-        font-size: 0.7rem; /* Smaller handle text for mobile */
-    }
-
-    .card-description {
-        font-size: 0.9rem; /* Smaller text for descriptions */
-    }
-
-    /* Adjust animation duration for very small screens */
-    .upper-row,
-    .lower-row {
-        animation-duration: 20s; /* Slow down animation even more on small screens */
-    }
-}
 
 
 
