@@ -991,34 +991,28 @@ html {
 /* ------------------ */
 
 
-@media screen and (max-width: 768px) {
-    
+@media (max-width: 768px) {
+    .connect-section {
+        padding: 40px 10px; /* Reduced padding to fit the screen better */
+    }
+
+    .row-wrapper {
+        margin: 15px 0; /* Adjusted margin */
+    }
+
     .row {
         gap: 10px; /* Reduced gap for smaller screens */
+        width: 150%; /* Adjust the row width to avoid large space */
     }
 
-    /* Adjusting the width of the cards for smaller screens */
     .card {
-        width: 30%; /* Making cards smaller and more responsive */
-        margin: 0 10px;
-        
-    }
-
-    /* Adjust card header text size */
-    .card-header .title {
-        font-size: 1rem;
-    }
-
-    .card-header .handle {
-        font-size: 0.8rem;
-    }
-
-    /* Adjusting row animation speed and movement for smaller screens */
-    .upper-row,
-    .lower-row {
-        animation-duration: 15s; /* Slower animation for smaller screens */
+        width: 100%; /* Make the cards take up full width of container */
+        max-width: 280px; /* Limit card width for small screens */
+        margin: 0 auto; /* Center the card */
     }
 }
+
+
 /* Media Query for very small screens (mobile phones) */
 @media screen and (max-width: 480px) {
     .card {
