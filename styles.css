@@ -803,6 +803,9 @@ html {
     #firefly-particles{
         height: 100%;
     }
+    .firefly{
+        max-height: 100%;
+    }
 }
 
 .shimmer-text {
@@ -843,21 +846,7 @@ html {
     100% { background-position: 0% 50%; }
 }
 
-/* @keyframes shimmer-glow {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 0.8; }
-} */
-@media (max-width: 768px) {
-    #particles {
-        width: 10%; /* Reduce the grid width to 80% of the screen */
-    }
-}
 
-@media (max-width: 480px) {
-    #dot-grid {
-        width: 10%; /* Further reduce the grid width to 60% of the screen */
-    }
-}
 
 /* ------------more changes--------------- */
 /* styles.css */
