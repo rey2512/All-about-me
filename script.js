@@ -137,3 +137,52 @@ for (let i = 0; i < numFireflies; i++) {
 setInterval(createFirefly, 200); // Create a new firefly every 200ms
 */
 
+// @media (max-width: 480px) {
+//     .container {
+//         width: 100%;
+//         overflow: hidden; /* Hide overflow to only show one container at a time */
+//     }
+
+//     .row-wrapper {
+//         display: flex;
+//         justify-content: flex-start;
+//         align-items: center;
+//         height: 100%;
+//         animation: scroll 10s linear infinite; /* Faster horizontal scroll (10 seconds) */
+//     }
+
+
+//     .row {
+//         display: flex;
+//         padding: 0;
+//         width: calc(100vw * 9); /* Ensure width is large enough for 3 cards */
+//     }
+
+//     .card {
+//         flex-shrink: 0;
+//         width: 100vw; /* Full width of the viewport, one card per screen */
+//         margin: 0; /* No margin between cards to avoid extra space */
+//         text-align: center;
+    
+//         box-sizing: border-box;
+//         padding: 20px;
+//         font-size: 14px;
+//     }
+//   }
+//   /* General styles for upper row */
+// .upper-row {
+//     display: flex;
+//     flex-wrap: nowrap;
+//     justify-content: space-between;
+//     padding: 20px;
+// }
+
+// .upper-row .card {
+//     width: 200px; /* Original width */
+//     margin: 10px; /* Original margin */
+//     background-color: #f0f0f0;
+//     text-align: center;
+//     padding: 20px;
+//     font-size: 16px;
+//     box-sizing: border-box;
+// }
