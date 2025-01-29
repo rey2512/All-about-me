@@ -33,44 +33,34 @@ span {
 }
 
 /* Particle Effect Styles */
-
-
-#neuron-particles {
+#firefly-particles {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: -1;
+    background: radial-gradient(circle, #02202d, #000000, #051444);
+    overflow: hidden; /* Prevents fireflies from overflowing */
 }
 
-.particle {
+.firefly {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background-color: rgba(255, 255, 255, 0.8); /* Bright white dots */
-    border-radius: 50%; /* Round particles */
-    pointer-events: none;
-    animation: float 8s infinite ease-in-out;
+    width: 6px;
+    height: 6px;
+    background-color: #f7f7b0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #f7f7b0;
+    animation: fly 8s infinite ease-in-out;
+    opacity: 0; /* Start with 0 opacity for fade-in effect */
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px); /* Floating up and down */
-    }
+@keyframes fly {
+    0%, 100% { transform: translate(0, 0); opacity: 0; } /* Fade in/out at start/end */
+    25% { transform: translate(20px, -30px); opacity: 1; } /* Visible during movement */
+    50% { transform: translate(-20px, 20px); opacity: 1; }
+    75% { transform: translate(30px, -10px); opacity: 1; }
 }
-
-.line {
-    position: absolute;
-    width: 2px;
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent connecting lines */
-    transform-origin: top left;
-    pointer-events: none;
-}
-
 /* Section 1: Introduction */
 #intro-section {
     margin-top: 100px;
@@ -806,10 +796,9 @@ html {
     font-size: clamp(1.5rem, 5vw, 3rem);
     font-family: 'Arial', sans-serif;
     font-weight: bold;
-    background: linear-gradient(120deg, #795b5b, #043fff, #ffcccc, #d1aaff, #eecf31);
     background-size: 300%;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* -webkit-text-fill-color: transparent; */
     animation: shimmer-wave 4s linear infinite;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
     padding: 5px 10px;

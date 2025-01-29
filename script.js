@@ -98,79 +98,41 @@ document.getElementById('home-nav').addEventListener('click', function() {
     });
     
     
-    const container = document.getElementById('particle-container');
-    const particleCount = 100; // Number of particles
-
-    // Create particles
-    const particles = [];
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        container.appendChild(particle);
-        particles.push(particle);
-    }
-
-    let lastMoveTime = 0; // Throttle flag for mouse/touchmove
-
-    // Store positions of particles
-    const particlePositions = [];
-    function positionParticles() {
-        particles.forEach(particle => {
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-            particle.style.left = `${x}px`;
-            particle.style.top = `${y}px`;
-            particlePositions.push({ x, y });
-        });
-    }
-
-    // General function for mousemove and touchmove
-    function handleMovement(e) {
-        const now = Date.now();
-        if (now - lastMoveTime < 30) return; // Throttle the movement event
-        lastMoveTime = now;
-
-        // Handle mousemove or touchmove
-        let mouseX, mouseY;
-
-        if (e.type === 'mousemove') {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        } else if (e.type === 'touchmove' && e.touches.length > 0) {
-            mouseX = e.touches[0].clientX;
-            mouseY = e.touches[0].clientY;
-        }
-
-        // Animate particles on mouse/touch movement
-        particles.forEach((particle, index) => {
-            const dx = particlePositions[index].x - mouseX;
-            const dy = particlePositions[index].y - mouseY;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            // If particle is near the mouse/touch, enlarge and change color
-            if (distance < 150) {
-                particle.style.transform = 'scale(1.1)';
-                particle.style.backgroundColor = 'rgba(247, 173, 13, 0.9)';
-            } else {
-                particle.style.transform = 'scale(1)';
-                particle.style.backgroundColor = 'rgba(35, 35, 37, 0.7)';
-            }
-        });
-    }
-
-    // Listen for both mousemove and touchmove
-    document.addEventListener('mousemove', handleMovement);
-    document.addEventListener('touchmove', handleMovement);
-
-    // Initialize particles' positions
-    positionParticles();
-    
-    // Re-position particles when the window is resized
-    window.addEventListener('resize', () => {
-        positionParticles();
-    });
-
+  
     // ------------------------------------
 
 
 /* script.js */
+const fireflyParticles = document.getElementById('firefly-particles');
+const numFireflies = 70; // Number of fireflies
+
+function createFirefly() {
+    const firefly = document.createElement('div');
+    firefly.classList.add('firefly');
+
+    // Random position and animation delay
+    const xPos = Math.random() * 100; // 0-100vw
+    const yPos = Math.random() * 100; // 0-100vh
+    const animationDelay = Math.random() * 8; // Random delay (matches animation duration)
+
+    firefly.style.left = xPos + 'vw';
+    firefly.style.top = yPos + 'vh';
+    firefly.style.animationDelay = animationDelay + 's';
+
+    fireflyParticles.appendChild(firefly);
+
+    // Optional: Remove firefly after animation completes (for long animations/continuous stream)
+    firefly.addEventListener('animationend', () => {
+        // firefly.remove(); // Uncomment if needed
+    });
+}
+
+// Create initial fireflies
+for (let i = 0; i < numFireflies; i++) {
+    createFirefly();
+}
+
+// Optional: Create fireflies continuously
+/*
+setInterval(createFirefly, 200); // Create a new firefly every 200ms
+*/
