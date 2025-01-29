@@ -71,6 +71,7 @@ span {
     flex-direction: column;
     position: relative;
     padding: 0 20px;
+    z-index: 1;
     text-align: center;
 }
 
@@ -990,27 +991,36 @@ html {
   
   /* Small screens (e.g., mobile) */
   @media (max-width: 480px) {
-    .connect-section .card {
-        flex: 0 1 calc(100% - 20px); /* Ensures one card per row with a 20px gap */
-        width: 100%; /* Full width of the container */
+    .container {
+        width: 100%;
+        overflow: hidden; /* Hide overflow to only show one container at a time */
     }
 
-    .connect-section {
-        
-        width:100px;
+    .row-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        animation: scroll 15s linear infinite; /* Infinite horizontal scroll */
+    }
+
+    .row {
+        display: flex;
+        padding: 0;
     }
 
     .card {
-        font-size: 10px; /* Smaller font size for smaller screens */
-       
-        height: 100px; /* Ensure height is fixed */
-     
+        flex-shrink: 0;
+        width: 100vw; /* Full width of the viewport, one card per screen */
+        margin: 0; /* No margin between cards to avoid extra space */
+        text-align: center;
+      
+        box-sizing: border-box;
+        padding: 20px;
+        font-size: 14px;
     }
+
 }
-
-
-
-
 
 
 
