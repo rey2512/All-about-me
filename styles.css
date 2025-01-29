@@ -1024,7 +1024,10 @@ html {
         padding: 20px;
         font-size: 14px;
     }
+    .upper-row .card{
 
+        font-size: 2px;
+    }
 }
 
 
@@ -1059,8 +1062,11 @@ html {
 
     .footer{
         font-size: 8px;
+        margin-top: 50px;
     }
 }
+
+
 /* ------------------------------------- */
 @media (max-width: 1024px) {
     .shimmer-text {
