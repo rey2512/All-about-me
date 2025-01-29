@@ -996,14 +996,14 @@ html {
     }
 
     .connect-section {
-        padding: 10px; /* Add padding to the section */
-        width: 300vh;
+        
+        width:100px;
     }
 
     .card {
-        font-size: 6px; /* Smaller font size for smaller screens */
-        padding: 15px; /* Adjust padding */
-        height: 150px; /* Ensure height is fixed */
+        font-size: 10px; /* Smaller font size for smaller screens */
+       
+        height: 100px; /* Ensure height is fixed */
      
     }
 }
