@@ -270,7 +270,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background 0.3s, transform 0.2s;
+    transition: background 0.3s, transform 0.2s, translate 0.2s;
 }
 
 .nav-item:hover {
@@ -282,6 +282,7 @@ span {
     width: 24px;
     height: 24px;
 }
+
 
 html {
     scroll-behavior: smooth;
@@ -295,7 +296,7 @@ html {
     left: 0;
     width: 5px;
     height: 0; /* Start with zero height */
-    background: linear-gradient(to bottom, rgb(255, 234, 0), rgb(10, 77, 2));
+    background: linear-gradient(to bottom, rgb(0, 68, 255), rgb(255, 0, 21));
     z-index: 1000;
     transition: height 0.2s ease;
     display: none; /* Hide initially */
@@ -579,17 +580,7 @@ html {
 
 
 /* ------------------------------------- */
-@media (max-width: 768px) {
-    .card {
-      flex: 1 1 calc(50% - 16px); /* Two cards per row on medium screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .card {
-      flex: 1 1 100%; /* One card per row on small screens */
-    }
-  }
+
   
 
   @media (max-width: 768px) {
@@ -636,7 +627,7 @@ html {
 }
 
 @media (max-width: 768px) {
-    /* Adjust layout for mobile */
+    
     .navigation {
         gap: 10px;
         bottom: 15px;
@@ -680,7 +671,7 @@ html {
     }
 
     .navigation {
-        flex-direction: column;
+        flex-direction:row;
         padding: 5px;
     }
 
@@ -708,7 +699,7 @@ html {
         flex-direction: column;
         gap: 10px;
         padding: 5px;
-        bottom: 42px;
+        bottom: 12px;
        
      
          
@@ -782,8 +773,8 @@ html {
  @media screen and (max-width: 768px) {
    
     #intro-section h1 {
-        font-size: 1.8em; /* Adjust font size for smaller screens */
-        line-height: 1.5;
+        font-size: 2.0em; /* Adjust font size for smaller screens */
+        line-height: 1.8;
         margin-top: 75px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         
@@ -793,7 +784,7 @@ html {
 @media screen and (max-width: 768px){
 #intro-section h1 {
     font-size: 2.0em; /* Adjust font size for smaller screens */
-    line-height: 1.5;
+    line-height: 1.8;
     margin-top: 75px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
@@ -1083,5 +1074,33 @@ html {
 
     .footer{
         font-size: 8px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .shimmer-text {
+        font-size: clamp(3rem, 4vw, 5rem); /* Adjusted for tablets */
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.4), 0 0 16px rgba(255, 255, 255, 0.2);
+        animation: shimmer-wave 5s linear infinite; /* Slightly slower */
+    }
+}
+
+@media (max-width: 768px) {
+    .shimmer-text {
+        font-size: clamp(4rem, 3.5vw, 6rem); /* Adjusted for small tablets & landscape phones */
+        text-shadow: 0 0 6px rgba(255, 255, 255, 0.3), 0 0 12px rgba(255, 255, 255, 0.1);
+        animation: shimmer-wave 6s linear infinite; /* Slower for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .shimmer-text {
+        font-size: clamp(2rem, 3vw, 3rem); /* Adjusted for mobile screens */
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.1);
+        animation: shimmer-wave 7s linear infinite; /* Even slower for smoothness */
+    }
+
+    .shimmer-text::after {
+        opacity: 0.5; /* Reduce glow effect for small screens */
     }
 }

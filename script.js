@@ -104,15 +104,15 @@ document.getElementById('home-nav').addEventListener('click', function() {
 
 /* script.js */
 const fireflyParticles = document.getElementById('firefly-particles');
-const numFireflies = 70; // Number of fireflies
+const numFireflies = 50; // Number of fireflies
 
 function createFirefly() {
     const firefly = document.createElement('div');
     firefly.classList.add('firefly');
 
     // Random position and animation delay
-    const xPos = Math.random() * 100; // 0-100vw
-    const yPos = Math.random() * 100; // 0-100vh
+    const xPos = Math.random() * 90; // 0-100vw
+    const yPos = Math.random() * 90; // 0-100vh
     const animationDelay = Math.random() * 8; // Random delay (matches animation duration)
 
     firefly.style.left = xPos + 'vw';
@@ -136,3 +136,4 @@ for (let i = 0; i < numFireflies; i++) {
 /*
 setInterval(createFirefly, 200); // Create a new firefly every 200ms
 */
+
