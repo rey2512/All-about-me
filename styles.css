@@ -627,31 +627,11 @@ html {
 }
 
 @media (max-width: 768px) {
-    
     .navigation {
-        gap: 10px;
-        bottom: 15px;
-        left: auto;
-       
-    }
-
-    .nav-item {
-        width: 40px;
-        height: 40px;
-        
-    }
-
-    .nav-item img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .social-icons {
-        gap: 15px; /* Reduce gap further for smaller screens */
-    }
-
-    .icon {
-        font-size: 2rem; /* Adjust font size for medium screens */
+        width: 80%;  /* Increase width to 80% for smaller screens */
+        left: 50%;  /* Keep it centered horizontally */
+        margin-left: -40%;  /* Adjust to center based on new width */
+        bottom: 10px;  /* Adjust the bottom distance if needed */
     }
 
     
@@ -696,24 +676,30 @@ html {
 @media (max-width: 480px) {
     /* Adjust layout for very small screens */
     .navigation {
-        flex-direction: column;
-        gap: 10px;
-        padding: 5px;
+        display: flex;
+        justify-content: center;  /* Centers horizontally */
+        align-items: center;  /* Centers vertically (if needed) */
+        position: fixed;  /* Stays at the bottom */
         bottom: 12px;
-       
-     
-         
+        flex-direction: row;
+        gap: 10px;
+        background-color: transparent;
+        padding: 5px;
+        width: 50%;  /* Makes it 50% of the width */
+        left: 50%;  /* Centers the container horizontally */
+        margin-left: -25%;  /* Centers the container by shifting it left by half of its width */
     }
-
+    
     .nav-item {
         width: 25px;
         height: 25px;
     }
-
+    
     .nav-item img {
         width: 12px;
         height: 12px;
     }
+    
 
     .box {
         width: 100%; 
