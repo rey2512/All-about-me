@@ -1001,8 +1001,8 @@ html {
         justify-content: flex-start;
         align-items: center;
         height: 100%;
-        animation: scroll 15s linear infinite; /* Infinite horizontal scroll */
-    }
+        animation: scroll 5s linear infinite; /* Infinite horizontal scroll */
+    }   
 
     .row {
         display: flex;
