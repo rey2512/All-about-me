@@ -313,78 +313,126 @@ html {
 
 /* cube */
 
-.cube-container {
-    perspective: 1000px;
+/* Container for the spinner */
+.spinner-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #000; /* Dark background for better contrast */
-    overflow: hidden;
+    background-color: #000;
+    perspective: 1000px; /* Adds depth for 3D effect */
 }
 
-.cube {
-    width: 200px;
-    height: 200px;
+/* Main spinner */
+.spinner {
+    width: 300px; /* Bigger size */
+    height: 300px;
     position: relative;
-    transform-style: preserve-3d;
-    animation: rotate 15s infinite linear;
+    transform-style: preserve-3d; /* Enables 3D transformations */
+    animation: spin 6s infinite linear;
 }
 
-.face {
+/* Spinner rings */
+.ring {
+    width: 100%;
+    height: 100%;
+    border: 15px solid transparent;
+    border-radius: 50%;
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.1); /* Slightly transparent to let the stars shine through */
-    border: 2px solid #ebfcfc;
+    box-shadow: 0 0 30px rgba(240, 240, 240, 0.8);
+    animation: color-change 8s infinite ease-in-out;
+}
+
+/* Individual rings positioned in 3D space */
+.ring-1 {
+    transform: rotateY(0deg);
+    border-color: #1100fe;
+}
+
+.ring-2 {
+    transform: rotateY(45deg);
+    border-color: #1afc05;
+}
+
+.ring-3 {
+    transform: rotateY(90deg);
+    border-color: #ff6f61;
+}
+
+.ring-4 {
+    transform: rotateY(135deg);
+    border-color: #ffd700;
+}
+
+/* Center of the spinner */
+.center {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+/* Tech stack icons */
+.tech-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    color: rgb(254, 254, 254);
-    text-shadow: 0 0 5px #0c0f0f;
-    overflow: hidden; /* Prevent stars from going out of the face */
-    animation: moveStars 20s infinite linear;
+    animation: orbit 10s infinite linear;
+    transform: rotate(calc(360deg / 5 * var(--i))) translateX(200px) rotate(calc(-360deg / 5 * var(--i)));
 }
 
-.face.front  { transform: translateZ(100px); }
-.face.back   { transform: rotateY(180deg) translateZ(100px); }
-.face.left   { transform: rotateY(-90deg) translateZ(100px); }
-.face.right  { transform: rotateY(90deg) translateZ(100px); }
-.face.top    { transform: rotateX(90deg) translateZ(100px); }
-.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-/* Animation for rotating the cube */
-@keyframes rotate {
-    0%   { transform: rotateX(0deg) rotateY(0deg); }
-    100% { transform: rotateX(360deg) rotateY(360deg); }
+.tech-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
-/* Starry background effect on each face */
-@keyframes moveStars {
+/* Orbit animation for tech stack icons */
+@keyframes orbit {
     0% {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    }
-    50% {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+        transform: rotate(calc(360deg / 5 * var(--i))) translateX(200px) rotate(calc(-360deg / 5 * var(--i)));
     }
     100% {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+        transform: rotate(calc(360deg / 5 * var(--i) + 360deg)) translateX(200px) rotate(calc(-360deg / 5 * var(--i) - 360deg));
+    }
+}
+
+/* Spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+/* Color-changing animation for the rings */
+@keyframes color-change {
+    0%, 100% {
+        border-color: #82c7ff;
+    }
+    25% {
+        border-color: #ffffff;
+    }
+    50% {
+        border-color: #ffe8c8;
+    }
+    75% {
+        border-color: #ce51ff;
     }
 }
 
 
-.face::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(circle, white 1px, transparent 1px);
-    background-size: 10px 10px; /* Adjust the size of the stars */
-    animation: moveStars 5s infinite linear;
-}
 /* ------------------------ */
 
 /* ------------------------ */
