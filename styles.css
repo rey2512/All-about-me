@@ -920,6 +920,7 @@ html {
    
     50% {
         transform: translateX(-50%);
+       
     }
     60% {
         transform: translateX(0);
@@ -937,6 +938,7 @@ html {
     
     50% {
         transform: translateX(50%);
+      
     }
     60% {
         transform: translateX(0);
@@ -996,39 +998,108 @@ html {
 @media (max-width: 480px) {
     .container {
         width: 100%;
-        overflow: hidden; /* Hide overflow to only show one container at a time */
+        overflow: hidden; /* Ensures only one card is visible at a time */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* Styles for the lower row (which will scroll left) */
+    /* Upper Row Wrapper */
+    .upper-row-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 15px; /* Professional spacing */
+    }
+
+    /* Lower Row Wrapper */
     .lower-row-wrapper {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         height: 100%;
-        animation: scroll 10s linear infinite; /* Faster horizontal scroll (10 seconds) */
     }
 
-    .lower-row {
+    /* Row Styling */
+    .upper-row, .lower-row {
         display: flex;
         padding: 0;
-        width: calc(100vw * 9); /* Ensure width is large enough for 9 cards */
+        width: calc(100vw * 9); /* Ensures width fits multiple cards */
     }
 
-    .lower-row .card {
+    /* Professional Card Styling */
+    .upper-row .card, .lower-row .card {
         flex-shrink: 0;
-        width: 100vw; /* Full width of the viewport, one card per screen */
-        margin: 0; /* No margin between cards to avoid extra space */
+        width: 90vw; /* Slightly smaller than full width for better aesthetics */
+        margin: 5px auto; /* Adds subtle spacing */
         text-align: center;
-       
         box-sizing: border-box;
         padding: 20px;
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        will-change: transform;
     }
-    .upper-row .card{
 
-        font-size: 2px;
+
+    /* Lift & Straighten Effect on Hover */
+    .upper-row .card:hover,
+    .lower-row .card:hover {
+        transform: scale(1.05) rotate(0deg); /* Subtle lift and straighten */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 }
+/* Animation for upper row moving to the left, then quickly reversing */
+/* Upper row moves left continuously */
+@keyframes moveUpperRow {
+    0% {
+        transform: translateX(0);
+    }
+    48% {
+        transform: translateX(-50%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    98% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Lower row moves right continuously */
+@keyframes moveLowerRow {
+    0% {
+        transform: translateX(0);
+    }
+    48% {
+        transform: translateX(50%);
+    }
+    50% {
+        transform: translateX(50%);
+    }
+    98% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Apply the animations */
+.upper-row {
+    animation: moveUpperRow 20s linear infinite;
+}
+
+.lower-row {
+    animation: moveLowerRow 20s linear infinite;
+}
+
 
 
 
