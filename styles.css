@@ -1156,7 +1156,7 @@ html {
 /* -----------------footer-------------------------- */
 
 .footer {
-    background-color: #000;
+  
     color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -1164,6 +1164,7 @@ html {
     padding: 15px;
     width: 100%;
     font-size: 1rem;
+    font-weight: 600;
     opacity: 0.8;
 }
 
@@ -1182,6 +1183,9 @@ html {
     .footer{
         font-size: 8px;
         margin-top: 50px;
+        font-weight: bold;
+        background-color: #000;
+        
     }
 }
 
