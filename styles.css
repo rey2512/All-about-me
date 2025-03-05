@@ -194,7 +194,7 @@ span {
 .line-separator {
     width: 80%;
     height: 2px;
-    background: linear-gradient(90deg, #000000, #ffffff);
+    background: linear-gradient(90deg, #c6ffe8, #ffffff);
     margin: 40px auto;
 }
 
@@ -297,7 +297,7 @@ html {
     left: 0;
     width: 5px;
     height: 0; /* Start with zero height */
-    background: linear-gradient(to bottom, rgb(0, 68, 255), rgb(255, 0, 21));
+    background: linear-gradient(to bottom, rgb(242, 255, 255), rgb(112, 110, 255));
     z-index: 1000;
     transition: height 0.2s ease;
     display: none; /* Hide initially */
@@ -377,24 +377,6 @@ html {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Reduced shadow for performance */
 }
 
-/* Tech stack icons */
-.tech-icon {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: orbit 10s infinite linear;
-    transform: rotate(calc(360deg / 5 * var(--i))) translateX(150px) rotate(calc(-360deg / 5 * var(--i)));
-}
-
-.tech-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)); /* Reduced shadow for performance */
-}
 
 /* Orbit animation for tech stack icons */
 @keyframes orbit {
@@ -419,16 +401,16 @@ html {
 /* Color-changing animation for the rings */
 @keyframes color-change {
     0%, 100% {
-        border-color: #82c7ff;
+        border-color: #bcdefa;
     }
     25% {
         border-color: #ffffff;
     }
     50% {
-        border-color: #ffe8c8;
+        border-color: #c0fff1;
     }
     75% {
-        border-color: #e39bff;
+        border-color: #b2b2b2;
     }
 }
 
@@ -897,8 +879,10 @@ html {
 }
 
 /* Styling for individual cards */
+
+
 .card {
-    width: 320px;
+    width: 300px;
     margin: 0 15px;
     padding: 15px;
     background-color: #100f0fee;
@@ -1163,8 +1147,8 @@ html {
     align-items: center;
     padding: 15px;
     width: 100%;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 300;
     opacity: 0.8;
 }
 

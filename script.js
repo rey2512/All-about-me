@@ -104,7 +104,7 @@ document.getElementById('home-nav').addEventListener('click', function() {
 
 /* script.js */
 const fireflyParticles = document.getElementById('firefly-particles');
-const numFireflies = 50; // Number of fireflies
+const numFireflies = 30; // Number of fireflies
 
 function createFirefly() {
     const firefly = document.createElement('div');
@@ -132,8 +132,6 @@ for (let i = 0; i < numFireflies; i++) {
     createFirefly();
 }
 
-// Optional: Create fireflies continuously
-/*
-setInterval(createFirefly, 200); // Create a new firefly every 200ms
-*/
+
+
 
